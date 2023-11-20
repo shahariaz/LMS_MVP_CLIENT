@@ -1,0 +1,13 @@
+.navbar {
+  background: rgb(245, 252, 255);
+  padding: 10px 20px; /* Add padding to the navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black; /* Add 'px' unit for the width of the border */
+}
+
+.logo {
+  width: 350px; /* Set the width of the logo image */
+  height: auto; /* Maintain the aspect ratio of the logo */
+}
