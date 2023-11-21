@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles.js";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server.js";
 import { toast } from "react-toastify";
@@ -16,21 +16,18 @@ const Login = () => {
     e.preventDefault();
 
     await axios
-      .post(
-        `${server}/user/login-user`,
-        {
-          email,
-          password,
-        },
-        { withCredentials: true }
-      )
+      .post(`${server}/api/v1/login`, {
+        email,
+        password,
+      })
       .then((res) => {
         toast.success("Login Success!");
-        navigate("/");
+        navigate("/teacher");
         window.location.reload(true);
       })
       .catch((err) => {
-        toast.error(err.response.data.message);
+        // toast.error(err.response.data.message);
+        console.log(err);
       });
   };
 

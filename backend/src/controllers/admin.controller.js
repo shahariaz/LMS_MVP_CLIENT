@@ -1,7 +1,7 @@
 // controllers/adminController.js
 
 const Teacher = require("../models/teacher.model");
-
+const Student = require("../models/student");
 const catchAsync = require("../utils/catchAsync");
 
 // Controller to create a parent account

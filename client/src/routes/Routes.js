@@ -1,2 +1,4 @@
 import Login from "../pages/loginPage/Login.jsx";
-export { Login };
+import Teacher from "../pages/teacherPage/Teacher.jsx";
+import Hw from "../pages/homeWork/Hw.jsx";
+export { Login, Teacher, Hw };
