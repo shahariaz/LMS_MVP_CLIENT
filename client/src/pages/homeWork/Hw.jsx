@@ -27,8 +27,9 @@ const TeacherView = () => {
 
   const handleDeny = async (homeworkId, denialReason) => {
     try {
+      console.log(denialReason);
       // Make an API call to update the status of the homework to "denied"
-      await axios.put(`${server}/api/v1/homework/${homeworkId}`, {
+      await axios.put(`${server}/api/v1/homework/1`, {
         status: "denied",
         denialReason: denialReason,
       });

@@ -7,8 +7,10 @@ const studentSchema = new mongoose.Schema({
   coursesEnrolled: [
     {
       course: { type: mongoose.Schema.Types.ObjectId, ref: "Course" },
-      currentUnit: { type: mongoose.Schema.Types.ObjectId, ref: "Unit" },
-      currentLesson: { type: mongoose.Schema.Types.ObjectId, ref: "Lesson" },
+      currentUnit: {
+        type: string,
+      },
+      currentLesson: { type: string },
     },
   ],
   performance: [{ type: mongoose.Schema.Types.ObjectId, ref: "Performance" }],

@@ -50,6 +50,30 @@ const test = catchAsync(async (req, res) => {
 
   res.json({ message: "Test successful" });
 });
+// controllers/courseController.js
+const Course = require("../models/course");
+
+// Controller for creating a new course
+exports.createCourse = async (req, res) => {
+  try {
+    const { title, description, units } = req.body;
+
+    // Create a new course instance
+    const newCourse = new Course({
+      title,
+      description,
+      units,
+    });
+
+    // Save the course to the database
+    const savedCourse = await newCourse.save();
+
+    res.status(201).json(savedCourse);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
 
 module.exports = {
   createParentAccount,

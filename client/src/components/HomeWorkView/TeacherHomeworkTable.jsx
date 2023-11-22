@@ -15,6 +15,7 @@ const TeacherHomeworkTable = ({ data, onApprove, onDeny }) => {
   };
 
   const handleImageModal = (homeworkId, imageUrl) => {
+    console.log(homeworkId, imageUrl);
     setSelectedHomeworkId(homeworkId);
     setSelectedImage(imageUrl);
     setShowImageModal(true);
@@ -27,7 +28,7 @@ const TeacherHomeworkTable = ({ data, onApprove, onDeny }) => {
       alert("Please provide a denial reason.");
       return;
     }
-
+    console.log(denialReason);
     // Perform the denial action with the selectedHomeworkId and denialReason
     onDeny(selectedHomeworkId, denialReason);
 
